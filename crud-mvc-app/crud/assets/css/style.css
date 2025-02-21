@@ -1,0 +1,21 @@
+body
+{
+ margin: 0;
+ padding: 0;   
+ background: url('../images/2.jpg');
+ background-size: cover;
+ background-position: center;   
+}
+.navbar
+{
+width: 80%;
+height: auto;
+margin: auto;    
+}
+.content 
+{
+width: 80%;
+height: auto;
+margin: auto;
+padding: 25px;    
+}

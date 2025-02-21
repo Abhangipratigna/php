@@ -1,0 +1,668 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <script src='main.js'></script>
+    <style>
+        body {
+            background-color: lightgray;
+            font-size: 35px;
+        }
+
+        .content {
+            width: 70%;
+            height: auto;
+            margin: auto;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="content">
+        <h1>What is SQL ?</h1>
+        <ul>
+            <li>SQL stands for structured query language</li>
+            <li>SQL is used to create a database and table structured</li>
+            <li>SQL is a case insenstive language <br> examples : Insert , INSERT , insert</li>
+            <li>SQL is not an programming language</li>
+            <li>SQL is used some Commands or query to completed database or table structured</li>
+
+        </ul>
+
+        <h1>Types of SQL commands ?</h1>
+        <ol>
+            <li>DDL
+                <ul>
+                    <li type="square">DDL stands for data definition language <br>
+                        examples : 1) create 2) rename 3) change 4) alter 5) drop 6) truncate
+                    </li>
+                </ul>
+            </li>
+            <li>DML
+                <ul>
+                    <li type="square">DML stands for data manupulation language <br>
+                        examples : 1) insert 2) delete 3) update
+                    </li>
+                </ul>
+            </li>
+            <li>DQL
+                <ul>
+                    <li type="square">DQL stands for data query language <br>
+                        examples : 1) select
+                        <br>
+                        a) order | group by
+                        b) like
+                        c) where clause
+
+                    </li>
+                </ul>
+            </li>
+            <li>TCL
+
+                <ul>
+                    <li type="square">TCL stands for data transactional control language <br>
+                        examples : 1) commit 2) Rollback
+                    </li>
+                </ul>
+            </li>
+
+        </ol>
+
+
+        <h1>what is DDL ?</h1>
+        <ol>
+            <li>DDL stands for data definition language</li>
+            <li>DDL is used to create database and table structured
+            <li>how to open mysql structured in xampp : http://localhost/phpmyadmin/
+            </li>
+            <br>
+            1) how to create a database in SQL ?
+            <br>
+
+            <mark>syntax : create database databasename;</mark>
+            <br>
+            <mark>examples : create database flipkart_app;</mark>
+
+
+            <br>
+            1) how to create a table in SQL ?
+            <br>
+
+            <mark>syntax :
+
+                create table tablename(
+                id auto_increment primary key,
+                coumnname datatype(size),
+                .
+                .
+                .
+                columnname datatype(size)
+
+                )
+
+            </mark>
+            <br>
+            <mark>examples :
+
+                create table tbl_users(
+                userid int AUTO_INCREMENT primary key,
+                name varchar(255),
+                lastname varchar(255),
+                age int,
+                email varchar(255),
+                password varchar(255),
+                address text,
+                phone bigint
+
+                )
+
+            </mark>
+
+            </li>
+
+            <li>How to used rename in DDL
+                <br>
+                rename is used to rename the table name
+                <br>
+                examples: rename table tbl_users to tbl_employee;
+            </li>
+
+
+            <li>How to change column name of any tables there we used alter
+                <br>
+                Alter: alter is used to change, modify and add columnname in tables
+                <br>
+                examples: 1) how to add columnname in tables
+                <br>
+                alter table tablename add columnname datatype(size);
+                <br>
+                ex: alter table tbl_employee add state varchar(255);
+                <br>
+                alter table tbl_employee add city varchar(255);
+                <br>
+                alter table tbl_employee add salary int after password;
+
+                <br><br>
+
+                examples: 2) how to modify or update columnname in tables
+                <br>
+                alter table tablename change columnname columnname datatype(size);
+                <br>
+                ex: alter table tbl_employee change phone mobile bigint;
+                <br><br>
+
+                examples: 3) how to drop or delete a columnname from tables
+                <br>
+                alter table tablename drop columnname;
+                <br>
+                ex: alter table tbl_employee drop lastname;;
+                <br>
+
+            </li>
+
+            <li>drop :drop is used to drop or delete database and table in sql
+                <br><br>
+                drop is never rollback after drop a table or database
+                <br><br>
+                ex: 1) how to drop database
+                <br>
+                examples : drop database databasename;
+                <br>
+                drop database flipkart_app_db;
+
+
+                1) how to drop table
+                <br>
+                examples : drop table tablename;
+                <br>
+                drop table tbl_country;
+                <br>
+                <mark>Note : after drop we never rollback a database and table structure</mark>
+
+
+            </li>
+
+            <li>How to use truncate : truncate is used to delete all data from tables or empty all data from tables
+                after truncate data we never roollback our data from table
+                <br><br>
+                examples : truncate table table;
+
+                <br><br>
+                truncate table tbl_country;
+            </li>
+
+            <li>DML (data manupulation language) <br>
+                DML is used to manupulate data in tables that are ...
+
+                <br>
+                1)insert : insert a row inside of table
+                <br>
+                insert a multiple rows in a table
+                <br>
+                examples :insert into tablename(columnname) values('values');
+                <br>
+                insert into tbl_country (countryname) values('india');
+                <br>
+                insert into tbl_country values('null','usa'),('null','srilanka'),('null','south
+                africa'),('null','Nitherland'),('null','Australia'),('null','UK'),('null','china');
+
+                <br></br>
+                insert into tbl_employee values
+                ('null','dixit',23,'dixit@gmmail.com','d1121',454212,'rajkot',912121212,'madhya
+                pradesh','rajkot'),('null','binit',23,'binit@gmmail.com','b1121',54212,'rajkot',652152121,'uttar
+                pradesh','ahemdabad');
+
+                2) delete :delete is used to delete particular data or all table data.
+                <br><br>
+                examples : delete from tablename;
+                <br>
+                delete from tbl_country;
+                <br>
+                delete from tabblname where columnname='name';
+                <br>
+                delete from tbl_country where countryid=3;
+                <br>
+                delete from tbl_country where countryid in (4,5,6)
+                <br><br>
+
+                3)update :update is used to update any row in table
+                <br><br>
+                examples : update tablename set columname='value' where id=2;
+                <br>
+                update tbl_country set countryname='united state of america' where countryid=2;
+            </li>
+
+            <li>
+                <h1>DQL </h1>DQL stands for data query language
+            </li>
+            <li>select : select * from tablename
+                <br>
+                examples : select * from tbl_country;
+
+            </li>
+
+            <li>select from columnname : select * from tablename
+                <br>
+                examples : select countryname from tbl_country;
+            </li>
+
+            <li>select from particular id : select * from tablename where id=2;
+                <br>
+                examples : select * from tbl_country where countryid=4;
+            </li>
+
+            <li>select used in clause : select * from tbl_country where countryid in (1,2,8);
+                <br>
+                examples :select * from tbl_country where countryid in (1,2,8);
+            </li>
+
+            <li>select * from tbl_country where countryid BETWEEN 1 and 100;</li>
+
+            <li>select * from tbl_country where countryid limit 0,10;</li>
+            <li>select * from tbl_country where countryname='india';</li>
+            <li>select * from tbl_country where countryname in ('india','uk');</li>
+
+            <li>
+                <h1>Difference between order by and group by</h1>
+
+                <br>
+                <h3>Order By :<b style="font-weight: 100;">Order by is used to filter data in order by that asc and desc
+                        order </b></h3>
+
+                <h3>Fetch employee name in ascending order :<b style="font-weight: 100;">
+                        select * from tbl_employee order by name asc;
+                    </b></h3>
+
+                <h3>Fetch employee name in descending order :<b style="font-weight: 100;">
+                        select * from tbl_employee order by name desc;
+                    </b></h3>
+
+                <h3>Fetch employee name order by :<b style="font-weight: 100;">
+                        select * from tbl_employee order by name;
+                    </b></h3>
+
+                <h3>Fetch employee salary using group by on department :<b style="font-weight: 100;">
+                        select sum(salary),department from tbl_employee GROUP by department;
+                    </b></h3>
+
+
+
+            </li>
+
+
+            <li>
+                <h2>Like operator :<b style="font-weight: 100;">Like operator is used to search data from tables using
+                        word card pattern systems
+                        <br>
+
+                        a) select * from tbl_employee where name like 'b%';
+                        b) select * from tbl_employee where name like '%h';
+                        c)select * from tbl_employee where name like '%a%';
+                    </b></h2>
+            </li>
+
+
+
+            <li>
+                <h2>SQL function :<b style="font-weight: 100;">There are two types of sql function
+                        <br>
+                        1) aggrigate function
+                        <br>
+                        a) min() <br>
+                        examples : select min(salary) from tbl_employee;
+                        <br>
+                        b) max() <br>
+                        examples : select max(salary) from tbl_employee;
+                        <br>
+                        c) sum() <br>
+                        examples : select sum(salary) from tbl_employee;
+                        <br>
+                        d) count() <br>
+                        examples : select count(userid) from tbl_employee;
+                        <br>
+                        e) avg() <br>
+
+                        examples : select avg(salary) from tbl_employee;
+                        <br>
+                        <h3>Note : subquery concepts <b style="font-weight: 100;">
+                                select max(salary) from tbl_employee where salary < (select MAX(salary) from
+                                    tbl_employee); </b>
+                        </h3>
+                        <br>
+                        b) scalar function
+                        <br>
+                        a) first() <br>
+                        examples : select first data from table
+                        <br>
+                        select first('name') from tbl_employee;
+                        <br>
+
+                        b) last() <br>
+                        examples : select last data from table
+                        <br>
+                        select last('name') from tbl_employee;
+                        <br>
+                        c) ucase() <br>
+                        examples : select uppercase data from table
+                        <br>
+                        select ucase(name) from tbl_employee;
+                        <br>
+                        d) lcase() <br>
+
+                        examples : select lower case data from table
+                        <br>
+                        select lcase(name) from tbl_employee;
+                        <br>
+                        <br>
+                    </b></h2>
+            </li>
+
+            <li>
+                <h2>TCL : (transactional control language)</h2>
+            </li>
+
+            <li>
+                <h5>Commit</h5> commit is used to save data after delete <br>
+                syntax : START TRANSACTION;
+                delete from tablename where id=1;
+                commit;
+
+
+                <br><br>
+                examples : START TRANSACTION;
+                delete from tbl_country where countryid=8;
+                commit;
+
+            </li>
+
+
+
+            <li>
+                <h5>rollback</h5> rollback is used to rollback data after delete <br>
+                syntax : START TRANSACTION;
+                select * from tablename where id=1;
+                rollback;
+                <br><br>
+                examples : START TRANSACTION;
+                select * from tbl_country where countryid=8;
+                rollback;
+                <br><br>
+
+                Note : mysqli structure not supported rollback
+
+            </li>
+
+
+            <li>
+                <h2>Key constraints </h2> key constraints is used to provides a limit on tables <br>
+                <h5>types of key constraints </h5>
+
+                <h6>1: primary key: <p style="font-weight: 100;">A PK is used to uniquely identify</p>
+                    <p style="font-weight: 100;">A primary key never return a null value</p>
+                    <p style="font-weight: 100;">A primary key only defined once time in a table</p>
+                    <p style="font-weight: 100;">A primary key in always auto_incremented</p>
+
+                    <p style="font-weight: 100;">create table tbl_users( userid int AUTO_INCREMENT primary key, name
+                        varchar(255), lastname varchar(255), age int, email varchar(255), password varchar(255), address
+                        text, phone bigint )</p>
+
+                    <table border="1" width="60%">
+                        <tr>
+                            <th>id(primary key)</th>
+                            <th>name</th>
+                            <th>age</th>
+                            <th>country</th>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Brijesh</td>
+                            <td>32</td>
+                            <td>India</td>
+                        </tr>
+
+                    </table>
+
+                </h6>
+
+
+                <h6>2: unique key:<p style="font-weight: 100;">A UK is used to uniquely identify users data</p>
+                    <p style="font-weight: 100;">A unique key at least return a single null value</p>
+                    <p style="font-weight: 100;">A unique key defined more than once time in a table</p>
+                    <p style="font-weight: 100;">A unique key never return a dublicate data in a table</p>
+
+                    <table border="1" width="60%">
+                        <tr>
+                            <th>id(primary key)</th>
+                            <th>name</th>
+                            <th>email(uk)</th>
+                            <th>phone(uk)</th>
+                            <th>age</th>
+                            <th>country</th>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Brijesh</td>
+                            <td>bkpandey@gmail.com</td>
+                            <td>9998003879</td>
+                            <td>32</td>
+                            <td>India</td>
+                        </tr>
+
+
+                    </table>
+                    <br><br>
+                    <h6>how to create a unique key</h6>
+                    <p>ALTER TABLE `tbl_users` ADD UNIQUE(`email`);"</p>
+                </h6>
+
+
+                <h6>3: foreign key:<p style="font-weight: 100;">A FK is used to uniquely identify users data</p>
+                    <p style="font-weight: 100;">A FK defined more than once time in a table</p>
+                    <p style="font-weight: 100;">A FK return a dublicate data in a table</p>
+                    <p style="font-weight: 100;">A FK provides relationship between tables with common data there we
+                        used FK</p>
+
+
+
+                    <table border="1" width="60%">
+                        <tr>
+                            <caption>tbl_user</caption>
+                        </tr>
+                        <tr>
+                            <th>userid(primary key)</th>
+                            <th>name</th>
+                            <th>age</th>
+                            <th>addres</th>
+                        </tr>
+                        <tr>
+                            <td>101</td>
+                            <td>Brijesh</td>
+                            <td>32</td>
+                            <td>ring road</td>
+                        </tr>
+
+                    </table>
+
+
+
+                    <table border="1" width="60%">
+                        <tr>
+                            <caption>tbl_country</caption>
+                        </tr>
+                        <tr>
+                            <th>countryid(primary key)</th>
+                            <th>countryname</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>India</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Usa</td>
+
+                        </tr>
+
+                    </table>
+
+
+
+                    <table border="1" width="60%">
+                        <tr>
+                            <caption>tbl_state</caption>
+                        </tr>
+                        <tr>
+                            <th>stateid(primary key)</th>
+                            <th>statename</th>
+                            <th>countryid(fk)</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Gujrat</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Uttar pradesh</td>
+                            <td>1</td>
+
+                        </tr>
+
+                    </table>
+
+
+
+
+                    <table border="1" width="60%">
+                        <tr>
+                            <caption>tbl_city</caption>
+                        </tr>
+                        <tr>
+                            <th>cityid(primary key)</th>
+                            <th>cityename</th>
+                            <th>stateid(fk)</th>
+                        </tr>
+                        <tr>
+                            <td>1</td>
+                            <td>Rajkot</td>
+                            <td>1</td>
+                        </tr>
+                        <tr>
+                            <td>2</td>
+                            <td>Ahemdabad</td>
+                            <td>1</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Badodra</td>
+                            <td>1</td>
+
+                        </tr>
+
+                        <tr>
+                            <td>3</td>
+                            <td>Varansi</td>
+                            <td>2</td>
+
+                        </tr>
+
+                    </table>
+
+
+                    <h3>How to create a foreign key in SQL </h3>
+                    <h6>create table tbl_state
+                        (
+                        stateid int primary key AUTO_INCREMENT,
+                        statename varchar(255),
+                        countryid int REFERENCES tbl_country(countryid)
+
+                        )
+
+
+
+                    </h6>
+
+                    <h3>SQL Join : </h3>
+                    <h6>sql join is used to join more than one tables with common field or if data matched one table
+                        with another table it will be joined </h6>
+
+                    <h3>Types of sql join </h3>
+
+                    <h6>1) join <br>
+                        2) inner join <br>
+                        3) outer join <br>
+                        <h6 style="font-weight: 100;">types of outer join <br>
+                            a)left outer join <br>
+                            b)right outer join <br>
+                            c)full outer join <br>
+                        </h6>
+                        4) cross join <br>
+
+                        <br><br>
+
+
+                        1) <b>join </b> : join all matched common data
+
+                        examples : select tbl_users.*,countryname,statename,ctyname from tbl_users join tbl_country on
+                        tbl_users.countryid=tbl_country.countryid join tbl_state on tbl_users.stateid=tbl_state.stateid
+                        join tbl_city on tbl_users.cityid=tbl_city.cityid;
+
+
+                        <br><br>
+
+                        2) inner : join all macthed common data
+                        examples : select tbl_users.*,countryname,statename,ctyname from tbl_users inner join
+                        tbl_country on tbl_users.countryid=tbl_country.countryid inner join tbl_state on
+                        tbl_users.stateid=tbl_state.stateid inner join tbl_city on tbl_users.cityid=tbl_city.cityid;
+
+                        <br><br>
+
+                        3) left join : left join are used to matched first table of left rows with second tables of left
+                        rows if data are matched join all data.
+                        examples : select tbl_users.*,countryname,statename,ctyname from tbl_users left join tbl_country
+                        on tbl_users.countryid=tbl_country.countryid left join tbl_state on
+                        tbl_users.stateid=tbl_state.stateid left join tbl_city on tbl_users.cityid=tbl_city.cityid;
+
+
+                        <br><br>
+
+
+                        3) right join : right join are used to matched second table of right rows with first tables of
+                        right rows if data are matched join all data otherwise return null values.
+
+                        examples : select tbl_users.*,countryname,statename,ctyname from tbl_users left join tbl_country
+                        on tbl_users.countryid=tbl_country.countryid left join tbl_state on
+                        tbl_users.stateid=tbl_state.stateid left join tbl_city on tbl_users.cityid=tbl_city.cityid;
+
+
+                        <br><br>
+
+                        4) full join : left jopin + right join but mysql is not supported
+
+
+                        <br><br>
+
+
+                        5)cross join : cross of tables rows itself and retuirn dublicate join data
+
+                        examples : select * from tbl_users cross join tbl_country;
+
+                    </h6>
+
+                </h6>
+
+
+
+            </li>
+        </ol>
+    </div>
+</body>
+
+</html>

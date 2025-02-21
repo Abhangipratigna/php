@@ -1,0 +1,42 @@
+:root {
+    --bg-danger: #ff0000;
+    --bg-violet: #6cadf8;
+    --bg-black: black;
+    --bg-white: white;
+    --text-danger: #ff0000;
+    --text-violet: #6cadfc;
+    --text-black: black;
+    --text-white: white;
+
+}
+
+body {
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    box-sizing: border-box;
+    background-color: white;
+
+}
+
+.main-content {
+    background-color: #6cadf8;
+}
+
+.dashboard {
+    background-color: #6cadf8;
+}
+
+
+.navigation {
+    border-radius: 0px 0px 85px 85px !important;
+}
+
+.nav {
+    border-radius: 15px !important;
+}
+
+.navbar-links li {
+    display: inline-block;
+    padding: 8px 35px;
+}

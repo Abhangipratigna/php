@@ -1,0 +1,30 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: lightgray;
+}
+
+.calculator-app {
+    width: 70%;
+    height: auto;
+    margin: 0;
+    margin-top: 8%;
+}
+
+.calculator-app input {
+    width: 94.5%;
+    height: auto;
+    padding: 18px;
+    text-align: right;
+    font-size: 28px;
+}
+
+#btn {
+    width: 230px;
+    height: auto;
+    padding: 22px;
+    border: none;
+    background-color: white;
+    box-shadow: 1px 1px 2px;
+    font-size: 18px;
+}

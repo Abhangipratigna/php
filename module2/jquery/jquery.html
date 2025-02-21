@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel='stylesheet' type='text/css' media='screen' href='main.css'>
+    <style>
+        .content {
+            width: 60%;
+            height: auto;
+            margin: auto;
+            padding: 25px;
+        }
+    </style>
+</head>
+
+<body>
+    <script src='https://code.jquery.com/jquery-3.7.1.js'></script>
+    <script>
+        $(document).ready(function () {
+
+            // hide effects
+            $("#btn1").click(function () {
+
+                // $("#para").hide("slow");
+                $("#para").hide(4000);
+
+            });
+
+
+            $("#btn2").click(function () {
+
+                // $("#para").hide("slow");
+                $("#para").show(4000);
+
+            });
+
+            $("#btn3").click(function () {
+
+                // $("#para").hide("slow");
+                $("#para").toggle(4000);
+
+            });
+
+        })
+    </script>
+
+    <div class="content">
+        <p id="para"> Lorem ipsum dolor sit, amet consectetur adipisicing elit. Sed fugiat unde cumque illo, nisi
+            repudiandae ipsam iusto nemo optio, perspiciatis excepturi? Vero aperiam, omnis nobis consequuntur
+            distinctio in hic modi!</p>
+        <button type="button" id="btn1">Hide >></button>
+        <button type="button" id="btn2">Show >></button>
+        <button type="button" id="btn3">Toggle >></button>
+    </div>
+
+</body>
+
+</html>
